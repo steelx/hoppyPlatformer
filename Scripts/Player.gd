@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+export var World_Limit = 3000
+
 const SPEED = 700
 const JUMP_SPEED = -1500
 const GRAVITY = 2600
@@ -29,6 +31,13 @@ func fall(d):
 		motion.y = 0
 	else:
 		motion.y += GRAVITY * d
+	
+	if position.y > World_Limit:
+		end_game()
+	pass
+
+func end_game():
+	get_tree().change_scene("res://Scenes/GameOver.tscn")
 	pass
 
 func move():
