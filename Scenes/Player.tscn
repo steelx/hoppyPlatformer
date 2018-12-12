@@ -9,7 +9,7 @@
 [ext_resource path="res://GFX/Players/bunny1_jump.png" type="Texture" id=7]
 [ext_resource path="res://Scripts/Player_Animation.gd" type="Script" id=8]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
@@ -39,7 +39,7 @@ custom_solver_bias = 0.0
 radius = 60.0
 height = 39.0051
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -47,13 +47,11 @@ collision_mask = 2
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
-frames = SubResource( 1 )
+position = Vector2( -6.16177, -1.32039 )
+frames = SubResource( 3 )
 animation = "run"
 frame = 1
 script = ExtResource( 8 )
@@ -61,7 +59,7 @@ script = ExtResource( 8 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 visible = false
-position = Vector2( 0.130981, 24.534 )
+position = Vector2( -5.15054, 23.6538 )
 shape = SubResource( 2 )
 
 

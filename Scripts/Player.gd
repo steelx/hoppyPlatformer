@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-const SPEED = 500
-const JUMP_SPEED = -1000
-const GRAVITY = 2300
+const SPEED = 700
+const JUMP_SPEED = -1500
+const GRAVITY = 2600
 var motion = Vector2()
 var UP = Vector2(0,-1)
 
@@ -25,7 +25,7 @@ func update_movement(d):
 	pass
 
 func fall(d):
-	if is_on_floor():
+	if is_on_floor() or is_on_ceiling():
 		motion.y = 0
 	else:
 		motion.y += GRAVITY * d
